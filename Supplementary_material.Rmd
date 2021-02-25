@@ -269,7 +269,7 @@ include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_BC_Antecedent
 include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_funnel.png")
 ```
 
-There is no evidence of publication case (p-value = 0.84).
+There is no evidence of publication case (p-value = 0.86).
 
 
 
