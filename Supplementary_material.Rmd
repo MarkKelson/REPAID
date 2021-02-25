@@ -136,7 +136,7 @@ include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_BC_Antecedent
 ```
 
 
-# Appendix C ####
+# Appendix B ####
 ### Exploration of publication bias in studies of low SES participants
 ```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Funnel plot for low SES studies"}
 include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_funnel.png")
