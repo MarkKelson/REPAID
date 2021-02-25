@@ -8,10 +8,14 @@ There are three data files
 
 and a code file
 
-1. PA sys rev code.R
+4. PA sys rev code.R
 
 and a Rmarkdown file for creating our supplement
 
-1. Supplementary_material.Rmd
+5. Supplementary_material.Rmd
+
+
+
+To replicate the analyses you should download all files, amend file paths in document 4 (which calls files 1-3) and then run all of the code in document 4. Document 5 will produce the supplementary material.
 
 
