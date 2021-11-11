@@ -12,7 +12,7 @@ and a code file
 
 and a Rmarkdown file for creating our supplement
 
-5. Supplementary_material.Rmd
+5. Supplementary_material_2.Rmd (Supplementary_material.Rmd is an older version)
 
 
 
