@@ -1,0 +1,301 @@
+---
+title: "Supplementary material"
+output: 
+  pdf_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(ggplot2)
+library(png)
+```
+
+```{r importdata, eval=T, echo=F, message=F, warning=F}
+##########
+library(meta)
+
+library(readxl)
+
+```
+# Appendix A ####
+
+## Pre-specified sensitivity analyses relating to objective 1 (effectiveness in low SES groups)
+
+### Low SES subgroup analysis comparing apps with a sole PA focus versus those without
+```{r eval=T,echo=F, fig.align="center",out.width="85%", fig.cap="Low SES participants in studies split by whether the app had a sole PA focus or not"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_PA_only.png")
+```
+\newpage
+
+### Low SES subgroup analysis comparing between countries
+
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Low SES participants in studies split by country"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_Country.png")
+```
+\newpage
+
+
+### Low SES subgroup analysis by outcome
+
+There were too few studies for each outcome type to subgroup meaningfully. 
+
+<!-- # ```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="Low SES participants in studies split by outcome"} -->
+<!-- #  -->
+<!-- # include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_outcome.png") -->
+<!-- # ``` -->
+
+\newpage
+
+### Low SES subgroup analysis by high risk of bias
+
+```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="Low SES participants in studies split by whether the studies were at high risk of bias or not"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_HROB.png")
+```
+\newpage
+
+### Low SES subgroup analysis by age groups
+Age group categorisation and reporting did not allow combining into groups for sub-group analysis. 
+
+### Low SES subgroup analysis by healthy or general population/versus chronic disease populations
+
+
+```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="Low SES participants in studies split by whether the study populations where  suffering fron chronic disease or not"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_Chronic.png")
+```
+
+\newpage
+
+
+### Low SES subgroup analysis by duration of app exposure (less than 3 months, 3-6, more than 6 months)
+
+```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="Low SES participants in studies split by duration of app exposure"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_Duration_of_app_m.png")
+```
+
+\newpage    
+
+### Low SES subgroup analysis by duration of follow-up 
+
+```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="Low SES participants in studies split by length of follow-up"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_time.png")
+```
+\newpage
+
+### Low SES subgroup analysis by pregnancy
+Not performed due to lack of studies.
+  
+
+
+
+## Low SES Behaviour change subgroups 
+
+### Low SES- Goals and planning versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Low SES participants in studies split by whether they employed goals and planning as a behaviour change technique or not"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_BC_Goals_and_planning.png")
+
+```
+\newpage
+
+### Low SES- Feedback and monitoring versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Low SES participants in studies split by whether they employed feedback and monitoring as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_BC_Feedback_and_monitoring.png")
+```
+\newpage
+### Low SES- Sharing knowledge versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Low SES participants in studies split by whether they employed sharing knowledge as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_BC_Sharing_knowledge.png")
+```
+\newpage
+### Low SES- Natural consequences versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Low SES participants in studies split by whether they employed natural consequences as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_BC_Natural_consequences.png")
+```
+\newpage
+### Low SES- Comparison of behaviour versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Low SES participants in studies split by whether they employed comparison of behaviour as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_BC_Comparison_of_behaviour.png")
+```
+\newpage
+### Low SES- Reward and threat versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Low SES participants in studies split by whether they employed reward and threat as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_BC_Reward_and_threat.png")
+```
+\newpage
+### Low SES- Antecedents versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Low SES participants in studies split by whether they employed antecedents as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_BC_Antecedents.png")
+```
+
+
+# Appendix B ####
+### Exploration of publication bias in studies of low SES participants
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Funnel plot for low SES studies"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_funnel.png")
+```
+
+There is no evidence of publication case (p-value = 0.52).
+
+
+# Appendix C ####
+
+## Pre-specified sensitivity analyses relating to objective 2 (effectiveness in high SES groups)
+
+### High SES subgroup analysis comparing apps with a sole PA focus versus those without
+
+```{r eval=T,echo=F, fig.align="center",out.width="85%", fig.cap="High SES participants in studies split by whether the app had a sole PA focus or not"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_PA_only.png")
+```
+\newpage
+
+### High SES subgroup analysis comparing between countries
+
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="High SES participants in studies split by country"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_Country.png")
+```
+\newpage
+
+
+### High SES subgroup analysis by outcome
+
+There were too few studies for each outcome type to subgroup meaningfully.
+
+<!-- # ```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="High SES participants in studies split by outcome"} -->
+<!-- #  -->
+<!-- # include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_outcome.png") -->
+<!-- # ``` -->
+
+\newpage
+
+### High SES subgroup analysis by high risk of bias
+
+```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="High SES participants in studies split by whether the studies were at high risk of bias or not"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_HROB.png")
+```
+\newpage
+
+### High SES subgroup analysis by age groups
+Age group categorisation and reporting did not allow combining into groups for sub-group analysis.
+
+### High SES subgroup analysis by healthy or general population/versus chronic disease populations
+
+
+```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="High SES participants in studies split by whether the study populations where  suffering fron chronic disease or not"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_Chronic.png")
+```
+
+\newpage
+
+
+### High SES subgroup analysis by duration of app exposure (less than 3 months, 3-6, more than 6 months)
+
+```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="High SES participants in studies split by duration of app exposure"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_Duration_of_app_m.png")
+```
+
+\newpage
+
+### High SES subgroup analysis by duration of follow-up
+
+```{r eval=T,echo=F, fig.align="center",out.width="90%", fig.cap="High SES participants in studies split by length of follow-up"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_time.png")
+```
+\newpage
+
+### High SES subgroup analysis by pregnancy
+Not performed due to lack of studies.
+
+
+
+
+## High SES - Behaviour change subgroups
+
+### High SES- Goals and planning versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="High SES participants in studies split by whether they employed goals and planning as a behaviour change technique or not"}
+
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_BC_Goals_and_planning.png")
+
+```
+\newpage
+
+### High SES- Feedback and monitoring versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="High SES participants in studies split by whether they employed feedback and monitoring as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_BC_Feedback_and_monitoring.png")
+```
+\newpage
+### High SES- Sharing knowledge versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="High SES participants in studies split by whether they employed sharing knowledge as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_BC_Sharing_knowledge.png")
+```
+\newpage
+### High SES- Natural consequences versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="High SES participants in studies split by whether they employed natural consequences as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_BC_Natural_consequences.png")
+```
+\newpage
+### High SES- Comparison of behaviour versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="High SES participants in studies split by whether they employed comparison of behaviour as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_BC_Comparison_of_behaviour.png")
+```
+\newpage
+### High SES- Reward and threat versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="High SES participants in studies split by whether they employed reward and threat as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_BC_Reward_and_threat.png")
+```
+\newpage
+### High SES- Antecedents versus not ####
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="High SES participants in studies split by whether they employed antecedents as a behaviour change technique or not"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_BC_Antecedents.png")
+```
+
+\newpage
+
+# Appendix D ####
+### Exploration of publication bias in studies of low SES participants
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Funnel plot for low SES studies"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_funnel.png")
+```
+
+There is no evidence of publication case (p-value = 0.86).
+
+\newpage
+
+# Appendix E
+### Post-hoc exploration of difference between objective and self-report physical activity
+
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Post-hoc sensitivity analysis exploring differences by self-report versus objectively measured physical activity in low SES groups"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_sub_SRvOR_ses.png")
+```
+
+\newpage
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Post-hoc sensitivity analysis exploring differences by self-report versus objectively measured physical activity in high SES groups"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_sub_SRvOR_ses.png")
+```
+
+\newpage
+
+### Post-hoc exploration of active versus inactive control
+
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Post-hoc sensitivity analysis exploring differences by active versus inactive controls in low SES groups"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_sub_ACvIC_ses.png")
+```
+
+\newpage
+```{r eval=T,echo=F, fig.align="center",out.width="100%", fig.cap="Post-hoc sensitivity analysis exploring differences by active versus inactive controls in high SES groups"}
+include_graphics("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_sub_ACvIC_ses.png")
+```
+

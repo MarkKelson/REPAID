@@ -73,8 +73,9 @@ m1_sub_ses
 
 
 #tiff("/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1.tiff", units="in", width=11, height=11, res=200)
-png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1.png',height=900,width=900) 
+#png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1.png',height=900,width=900) 
 png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Figure2.png',height=900,width=900) 
+#pdf(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Figure2.pdf',width=13,height=11) 
 
 forest(m1_sub_ses,digits.mean=1,digits.sd=1,subgroup=T,
        label.right = "Favours intervention",
@@ -91,7 +92,7 @@ dev.off()
 
 metabias.meta(m1)
 
-round(metabias.meta(m1)[4],2)
+round(metabias.meta(m1)[[4]],2)
 
 
 # Splitting by follow-up time
@@ -349,8 +350,7 @@ m1_sub_TotalBC <- metacont(data=PArevQ1prim,
 metareg_m1_TotalBC <- metareg(m1_sub_TotalBC,~Totalforstudy)
 
 #tiff(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_TotalBC.tiff',units="in", width=11, height=11, res=100) 
-#png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_TotalBC.png',units="in", width=11, height=11, res=100) 
-png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Figure5.png',units="in", width=11, height=11, res=100) 
+png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_TotalBC.png',units="in", width=11, height=11, res=100) 
 
 bubble(metareg_m1_TotalBC,main="",
        xlab = "Total number of behaviour change techniques employed",
@@ -530,7 +530,8 @@ m3_sub_ses
 
 
 #png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3.png',height=900,width=900) 
-png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Figure3.png',height=900,width=900) 
+#png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Figure3.png',height=900,width=900) 
+pdf(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Figure3.pdf',height=10,width=12) 
 
 forest(m3_sub_ses,digits.mean=1,digits.sd=1,subgroup=T,
        label.right = "Favours intervention",
@@ -547,7 +548,7 @@ dev.off()
 
 metabias.meta(m3)
 
-metabias.meta(m3)[4]
+round(metabias.meta(m3)[[4]],2)
 
 
 # Splitting by follow-up time
@@ -810,10 +811,47 @@ png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_TotalBC.png',units=
 bubble(metareg_m3_TotalBC,main="",
        xlab = "Total number of behaviour change techniques employed",
        col.line = "blue",
-       studlab = TRUE)
+       studlab = TRUE,xlim=range(c(-0.5,12)))
+
 
 dev.off()
 
+
+#png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1andQ3_TotalBC.png',units="in", width=11, height=11, res=100) 
+png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Figure5.png',units="in", width=11, height=11, res=100) 
+pdf(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Figure5.pdf', width=11, height=11) 
+
+#getting the order of studies    
+#metareg_m1_TotalBC$.meta$x$studlab
+#metareg_m3_TotalBC$.meta$x$studlab
+
+par(mfrow=c(1,2))
+bubble(metareg_m1_TotalBC,main="Low SES",
+       sub=paste("Slope = ",
+                 round(metareg_m1_TotalBC$beta[2],3),
+                 "p-value=",
+                 round(metareg_m1_TotalBC$pval[2],2)),
+       xlab = "Total number of behaviour change techniques employed",
+       col.line = "blue",
+       studlab = TRUE,xlim=range(c(-0.5,13)),
+       ylim=range(c(-0.8,1.75)),pos.studlab=c(2,2,2,2,4, #1-5
+                                              2,2,1,3,1, #6-10
+                                              1,2,2,3,1, #11-15
+                                              2,1,1,2,1)) #16-20
+
+bubble(metareg_m3_TotalBC,main="High SES",
+       sub=paste("Slope = ",
+                 round(metareg_m3_TotalBC$beta[2],3),
+                 "p-value=",
+                 round(metareg_m3_TotalBC$pval[2],2)),
+       xlab = "Total number of behaviour change techniques employed",
+       col.line = "blue",
+       studlab = TRUE,xlim=range(c(-0.5,13)),
+       ylim=range(c(-0.8,1.75)),pos.studlab=c(2,4,2,2,2, #1-5
+                                              1,3,1,1,2, #6-10
+                                              2,2,2,4,2, #11-15
+                                              2,2))      #16-17
+dev.off()
 
 #Sub-group analysis ####
 #Country- No evidence of country level differences ####
@@ -1122,4 +1160,118 @@ bubble(metareg_m3_duration,
        xlab = "Duration of app (months)",
        col.line = "blue",
        studlab = TRUE)
+
+
+
+#################################################
+#################################################
+#################################################
+#################################################
+#################################################
+#################################################
+#################################################
+#IJBNPA revisions
+#Self-report v Objective report
+
+library(grid)
+#Q1 - 
+m1_sub_SRvOR_ses <- metacont(data=PArevQ1prim,
+                              mean.e=Me,
+                              sd.e=Se,
+                              n.e=Ne,
+                              mean.c=Mc,
+                              sd.c=Sc,
+                              n.c=Nc,
+                              studlab=Author,
+                              sm="SMD",
+                              hakn=T,byvar=SelfReportPA)
+m1_sub_SRvOR_ses
+
+png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_sub_SRvOR_ses.png',height=900,width=900) 
+
+forest(m1_sub_SRvOR_ses,digits.mean=1,digits.sd=1,subgroup=T,
+       label.right = "Favours intervention",
+       label.left = "Favours control")
+
+grid.text("Low SES", .13, .85, gp=gpar(cex=2))
+
+
+dev.off() 
+
+#Q3 - 
+m3_sub_SRvOR_ses <- metacont(data=PArevQ3prim,
+                             mean.e=Me,
+                             sd.e=Se,
+                             n.e=Ne,
+                             mean.c=Mc,
+                             sd.c=Sc,
+                             n.c=Nc,
+                             studlab=Author,
+                             sm="SMD",
+                             hakn=T,byvar=SelfReportPA)
+m3_sub_SRvOR_ses
+
+png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_sub_SRvOR_ses.png',height=900,width=900) 
+
+forest(m3_sub_SRvOR_ses,digits.mean=1,digits.sd=1,subgroup=T,
+       label.right = "Favours intervention",
+       label.left = "Favours control")
+
+grid.text("High SES", .14, .8, gp=gpar(cex=2))
+
+dev.off() 
+
+###########################################
+#Active control versus inactive control
+
+#Q1 - 
+m1_sub_ACvIC_ses <- metacont(data=PArevQ1prim,
+                             mean.e=Me,
+                             sd.e=Se,
+                             n.e=Ne,
+                             mean.c=Mc,
+                             sd.c=Sc,
+                             n.c=Nc,
+                             studlab=Author,
+                             sm="SMD",
+                             hakn=T,byvar=Active_Control)
+m1_sub_ACvIC_ses
+
+png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q1_sub_ACvIC_ses.png',height=900,width=900) 
+
+forest(m1_sub_ACvIC_ses,digits.mean=1,digits.sd=1,subgroup=T,
+       label.right = "Favours intervention",
+       label.left = "Favours control")
+
+grid.text("Low SES", .13, .85, gp=gpar(cex=2))
+
+
+dev.off() 
+
+#Q3 - 
+m3_sub_ACvIC_ses <- metacont(data=PArevQ3prim,
+                             mean.e=Me,
+                             sd.e=Se,
+                             n.e=Ne,
+                             mean.c=Mc,
+                             sd.c=Sc,
+                             n.c=Nc,
+                             studlab=Author,
+                             sm="SMD",
+                             hakn=T,byvar=Active_Control)
+m3_sub_ACvIC_ses
+
+png(file = '/Users/markkelson/Dropbox/SysRev_Apps_PA/Code/Q3_sub_ACvIC_ses.png',height=900,width=900) 
+
+forest(m3_sub_ACvIC_ses,digits.mean=1,digits.sd=1,subgroup=T,
+       label.right = "Favours intervention",
+       label.left = "Favours control")
+
+grid.text("High SES", .14, .8, gp=gpar(cex=2))
+
+dev.off() 
+
+
+
+
 
